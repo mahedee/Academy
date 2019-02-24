@@ -61,6 +61,7 @@ namespace Academy.Controllers
         }
 
 
+        //api/Student/EditStudent?id=2
         [HttpPut] // means that this id will come from route  
         [Route("EditStudent")]
         public IActionResult UpdateStudentByID(int id, [FromBody] Student vStudent)
@@ -75,15 +76,14 @@ namespace Academy.Controllers
 
             student.FullName = vStudent.FullName;
             student.BloodGroup = vStudent.BloodGroup;
-            //workshop.Name = ws.Name;
-            //workshop.Speaker = ws.Speaker;
-
+ 
             _context.Students.Update(student);
             _context.SaveChanges();
             return new NoContentResult();
         }
 
 
+        //api/Student/DeleteStudent?id=2
         [HttpDelete]
         [Route("DeleteStudent")]
         public IActionResult Delete(int id)

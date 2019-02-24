@@ -29,6 +29,8 @@ namespace Academy
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+
+            //Configure for in memory database
             services.AddDbContext<ApplicationDbContext>(context => { context.UseInMemoryDatabase("AcademyDB"); });
 
         }
